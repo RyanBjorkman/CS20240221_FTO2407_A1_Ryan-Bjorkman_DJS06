@@ -63,3 +63,12 @@ console.log(totalPrice);
 // Concatenate all product names into a single string
 const allProductNames = products.reduce((acc, product) => `${acc} ${product.product}`, "").trim();
 console.log(allProductNames);
+
+// Identify highest and lowest priced products
+const prices = products
+  .filter(product => product.price && !isNaN(product.price))
+  .map(product => Number(product.price));
+const maxPrice = Math.max(...prices);
+const minPrice = Math.min(...prices);
+
+console.log(`Highest: ${maxPrice}. Lowest: ${minPrice}.`);
