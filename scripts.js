@@ -33,3 +33,7 @@ console.log(nameLengths);
 const sortedProvinces = [...provinces].sort();
 console.log(sortedProvinces);
 
+// Filter out provinces containing the word 'Cape' and log the count of remaining provinces
+const nonCapeProvinces = provinces.filter(province => !province.includes("Cape"));
+console.log(nonCapeProvinces.length);
+
