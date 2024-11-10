@@ -72,3 +72,10 @@ const maxPrice = Math.max(...prices);
 const minPrice = Math.min(...prices);
 
 console.log(`Highest: ${maxPrice}. Lowest: ${minPrice}.`);
+
+// Transform products object with name and cost keys using Object.entries and reduce
+const transformedProducts = Object.entries(products).reduce((acc, [index, product]) => {
+  acc.push({ name: product.product, cost: product.price });
+  return acc;
+}, []);
+console.log(transformedProducts);
