@@ -54,3 +54,8 @@ console.log(products.map(product => product.product));
 // Filter products with names longer than 5 characters
 console.log(products.filter(product => product.product.length <= 5));
 
+// Filter products with valid prices, convert to numbers, and calculate the total
+const totalPrice = products
+  .filter(product => product.price && !isNaN(product.price))
+  .reduce((total, product) => total + Number(product.price), 0);
+console.log(totalPrice);
