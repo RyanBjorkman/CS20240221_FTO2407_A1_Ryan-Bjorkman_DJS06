@@ -37,6 +37,13 @@ console.log(sortedProvinces);
 const nonCapeProvinces = provinces.filter(province => !province.includes("Cape"));
 console.log(nonCapeProvinces.length);
 
-// Create a boolean array to check if each name contains the letter 'S'
-const containsS = names.map(name => name.includes('S'));
+// Create a boolean array to check if each name contains the letter 'S' that is case insensitive
+const containsS = names.map(name => name.split('').some(char => char.toLowerCase() === 's'));
 console.log(containsS);
+
+// Use reduce to map names to their respective provinces
+const nameProvinceMapping = names.reduce((acc, name, index) => {
+  acc[name] = provinces[index];
+  return acc;
+}, {});
+console.log(nameProvinceMapping);
