@@ -59,3 +59,7 @@ const totalPrice = products
   .filter(product => product.price && !isNaN(product.price))
   .reduce((total, product) => total + Number(product.price), 0);
 console.log(totalPrice);
+
+// Concatenate all product names into a single string
+const allProductNames = products.reduce((acc, product) => `${acc} ${product.product}`, "").trim();
+console.log(allProductNames);
